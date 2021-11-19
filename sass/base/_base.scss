@@ -1,0 +1,24 @@
+$font-logo: Shrikhand;
+$font-text: Roboto;
+
+$color-primary: #9356dc;
+$color-secondary: #ff79da;
+$color-tertiary: #99e2d0;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* border: 2px solid red;  */
+}
+
+a {
+  all: unset;
+}
+
+a:hover {
+  cursor: pointer;
+}

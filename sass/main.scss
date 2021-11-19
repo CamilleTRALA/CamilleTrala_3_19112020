@@ -1,3 +1,5 @@
+@import "./base/base";
+
 @import "./utils/variables";
 
 @import "./utils/mixins";
@@ -8,23 +10,11 @@
 
 @import "./layouts/footer";
 
+@import "./components/spinner";
+
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
 
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  /* border: 2px solid red;  */
-}
-
-a {
-  all: unset;
-}
-
-a:hover {
-  cursor: pointer;
+.loaded{
+  opacity: 0;
 }
