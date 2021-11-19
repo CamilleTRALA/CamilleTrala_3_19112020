@@ -1,0 +1,13 @@
+header {
+  height: 50px;
+  font-family: $font-logo;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    position: absolute;
+    left: 20px;
+  }
+}
