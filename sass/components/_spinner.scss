@@ -6,26 +6,18 @@
   width: 100vw;
   background-color: white;
   z-index: 99;
-
-  animation: 0.3s fadeIn;
+  animation: 0.3s fade ease-in-out 2s;
   animation-fill-mode: forwards;
-  animation-delay: 2s;
-  visibility: visible;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 1;
-  }
+@keyframes fade {
   100% {
     opacity: 0;
     visibility: hidden;
   }
 }
 
-
 .spinner {
-  display: inline-block;
   position: fixed;
   top: 50vh;
   left: 50vw;
@@ -104,7 +96,7 @@
 }
 @keyframes spinner {
   100% {
-    transform: scale(1);
+    transform: scale(0);
   }
   10% {
     transform: scale(2);

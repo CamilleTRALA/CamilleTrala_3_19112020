@@ -1,19 +1,18 @@
 @import "./base/base";
-
 @import "./utils/variables";
-
 @import "./utils/mixins";
 
-@import "./layouts/header";
-
-@import "./layouts/menu";
-
-@import "./layouts/footer";
-
 @import "./components/spinner";
+@import "./components/button";
+@import "./components/card";
+
+@import "./layouts/header";
+@import "./layouts/menu";
+@import "./layouts/footer";
+@import "./layouts/acceuil";
 
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&family=Shrikhand&display=swap');
 
 .loaded{
   opacity: 0;

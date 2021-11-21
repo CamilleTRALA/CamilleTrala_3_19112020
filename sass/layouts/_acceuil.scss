@@ -1,0 +1,85 @@
+header {
+  @include shadow;
+}
+
+section {
+  h2 {
+    font-weight: 700;
+  }
+}
+
+.card-fonc {
+  display: flex;
+
+  padding: 20px;
+  padding-left: 0;
+
+  .wrapper {
+    width: 0;
+    @include flex-center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: $color-primary;
+    color: white;
+    font-size: 1rem;
+    position: relative;
+    left: -($card-padding + 0.3);
+  }
+
+  .container {
+    display: flex;
+    i {
+      color: grey;
+      padding-right: 20px;
+    }
+  }
+}
+
+.card-resto {
+  padding: 0;
+  flex-direction: column;
+  img {
+    object-fit: cover;
+    height: 50vw;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+  .container-text {
+    display: flex;
+    .container {
+      margin-right: auto;
+      .resto {
+      }
+      .resto-sub {
+        font-weight: 300;
+      }
+    }
+    i {
+      align-self: center;
+    }
+  }
+}
+
+.card-resto {
+  .new {
+    height: 0;
+    width: 100%;
+
+    &::after {
+      display: block;
+      width: fit-content;
+      padding: 7px 15px 7px 15px;
+      top: 15px;
+      right: 15px;
+      margin-left: auto;
+      text-align: end;
+      justify-content: end;
+      content: "Nouveau";
+      position: relative;
+      background-color: $color-tertiary;
+      color: #008766;
+      border-radius: 3px;
+    }
+  }
+}

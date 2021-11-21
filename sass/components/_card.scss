@@ -1,0 +1,7 @@
+.card {
+  background-color: white;
+  padding: $card-padding;
+  border-radius: 15px;
+  @include shadow;
+  font-weight: 700;
+}

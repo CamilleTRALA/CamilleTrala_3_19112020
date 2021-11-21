@@ -1,0 +1,12 @@
+footer {
+  background-color: $footer-bg-color;
+  color: white;
+  padding: 7vw;
+
+  .brand {
+    font-family: $font-logo;
+  }
+  i {
+      font-size: 10px;
+  }
+}

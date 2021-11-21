@@ -1,13 +1,15 @@
 header {
-  height: 50px;
+  @include flex-center;
+  height: $header-height;
   font-family: $font-logo;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
+  font-size: $brand-size;
+  padding-top: 8px;
   i {
+    font-size: $arrow-size;
     position: absolute;
-    left: 20px;
+    left: ($header-height/2) - ($arrow-size/2);
+  }
+
+  .brand {
   }
 }

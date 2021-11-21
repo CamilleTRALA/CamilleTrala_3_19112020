@@ -1,0 +1,14 @@
+.btn-container {
+  @include flex-center;
+
+  button {
+    display: block;
+    border-style: none;
+    color: white;
+    height: 50px;
+    width: 200px;
+    border-radius: 25px;
+    background: linear-gradient(-20deg, $color-primary, $color-secondary);
+    @include shadow;
+  }
+}
