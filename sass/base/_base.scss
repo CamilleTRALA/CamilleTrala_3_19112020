@@ -29,7 +29,7 @@ li {
   display: block;
 }
 
-a:hover {
+a {
   cursor: pointer;
 }
 
@@ -38,7 +38,3 @@ img {
 }
 
 // Heart icon outline
-i.fas.fa-heart {
-  color: white;
-  -webkit-text-stroke: 1px black;
-}

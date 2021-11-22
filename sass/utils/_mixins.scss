@@ -5,5 +5,9 @@ align-items: center;
 }
 
 @mixin shadow{
-    box-shadow: 0 0 5px 0 lightgray;
+    box-shadow: 0 0 5px 0 darkgray;
+}
+
+@mixin shadow--darker{
+    box-shadow: 0 0 5px 0 gray;
 }

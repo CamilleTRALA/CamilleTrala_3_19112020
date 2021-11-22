@@ -47,12 +47,14 @@ section {
     z-index: 99;
   }
 
-  i {
-    color: $menu-bg-color;
+  i.fas.fa-heart {
     font-size: 1.35rem;
     padding-right: 4.5vw;
 
   }
+}
+i.fas.fa-heart {
+    color: $menu-bg-color;
 }
 
 section {

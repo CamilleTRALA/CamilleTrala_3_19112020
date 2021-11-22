@@ -25,17 +25,12 @@ li {
   display: block;
 }
 
-a:hover {
+a {
   cursor: pointer;
 }
 
 img {
   width: 100%;
-}
-
-i.fas.fa-heart {
-  color: white;
-  -webkit-text-stroke: 1px black;
 }
 
 .loader {
@@ -205,7 +200,7 @@ i.fas.fa-heart {
           align-items: center;
 }
 
-.btn-container button {
+button {
   display: block;
   border-style: none;
   color: white;
@@ -213,17 +208,38 @@ i.fas.fa-heart {
   width: 200px;
   border-radius: 25px;
   background: linear-gradient(-20deg, #9356dc, #ff79da);
-  -webkit-box-shadow: 0 0 5px 0 lightgray;
-          box-shadow: 0 0 5px 0 lightgray;
+  -webkit-box-shadow: 0 0 5px 0 darkgray;
+          box-shadow: 0 0 5px 0 darkgray;
+}
+
+button:hover {
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  -webkit-box-shadow: 0 0 5px 0 gray;
+          box-shadow: 0 0 5px 0 gray;
 }
 
 .card {
   background-color: white;
   padding: 0.5rem;
   border-radius: 15px;
-  -webkit-box-shadow: 0 0 5px 0 lightgray;
-          box-shadow: 0 0 5px 0 lightgray;
+  -webkit-box-shadow: 0 0 5px 0 darkgray;
+          box-shadow: 0 0 5px 0 darkgray;
   font-weight: 700;
+}
+
+i.fas.fa-heart {
+  color: white;
+  -webkit-text-stroke: 1px black;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+}
+
+i.fas.fa-heart:hover {
+  -webkit-text-stroke: transparent;
+  background: -webkit-linear-gradient(-120deg, #9356dc, #ff79da);
+  background-clip: text;
+  color: transparent;
 }
 
 header {
@@ -242,7 +258,7 @@ header {
   padding-top: 8px;
 }
 
-header i {
+header .arrow {
   font-size: 20px;
   position: absolute;
   left: 21.5px;
@@ -302,10 +318,13 @@ section {
   z-index: 99;
 }
 
-.heading i {
-  color: #f6f6f6;
+.heading i.fas.fa-heart {
   font-size: 1.35rem;
   padding-right: 4.5vw;
+}
+
+i.fas.fa-heart {
+  color: #f6f6f6;
 }
 
 section h2 {
@@ -367,8 +386,8 @@ footer i {
 }
 
 header {
-  -webkit-box-shadow: 0 0 5px 0 lightgray;
-          box-shadow: 0 0 5px 0 lightgray;
+  -webkit-box-shadow: 0 0 5px 0 darkgray;
+          box-shadow: 0 0 5px 0 darkgray;
 }
 
 section h2 {
@@ -474,9 +493,5 @@ section h2 {
   background-color: #99e2d0;
   color: #008766;
   border-radius: 3px;
-}
-
-.loaded {
-  opacity: 0;
 }
 /*# sourceMappingURL=main.css.map */
