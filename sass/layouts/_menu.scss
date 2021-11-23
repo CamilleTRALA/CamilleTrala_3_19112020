@@ -50,11 +50,10 @@ section {
   i.fas.fa-heart {
     font-size: 1.35rem;
     padding-right: 4.5vw;
-
   }
 }
 i.fas.fa-heart {
-    color: $menu-bg-color;
+  color: $menu-bg-color;
 }
 
 section {
@@ -71,29 +70,36 @@ section {
   }
 
   > .container {
-    display: flex;
+    display: block;
     flex-direction: column;
     gap: 14px;
+  }
 
+  .card-dish {
 
-}
+    padding: 0;
 
-.card-dish {
-
-    .dish {
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
     > .container {
       display: flex;
-      .dish-sub {
-        margin-right: auto;
-        font-weight: 300;
-        font-size: 0.95rem;
-      }
+      flex-direction: column;
+      padding: 10px;
+      width: 100%;
 
-      .dish-price {
+      .dish {
         font-weight: 700;
+        font-size: 1.1rem;
+      }
+      > .container {
+        display: flex;
+        .dish-sub {
+          margin-right: auto;
+          font-weight: 300;
+          font-size: 0.95rem;
+        }
+
+        .dish-price {
+          font-weight: 700;
+        }
       }
     }
   }

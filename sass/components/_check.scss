@@ -1,0 +1,37 @@
+.card.card-dish {
+  display: flex;
+  overflow: hidden;
+  align-content: stretch;
+  > .container {
+    &:hover + .check {
+      width: 60px;
+    }
+  }
+
+  .check {
+
+    width: 0;
+
+    background-color: $color-tertiary;
+    transition: 400ms;
+
+    > .container {
+      display: flex;
+      @include flex-center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      top: 50%;
+      transform: translateY(-50%);
+      position: relative;
+      left: 15px;
+
+      i {
+        color: $color-tertiary;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
