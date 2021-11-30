@@ -1,13 +1,16 @@
-i.fas.fa-heart {
-  color: white;
-  -webkit-text-stroke: 1px black;
+.heart {
+  width: 1.5rem;
+
   transition: 400ms;
 }
 
-i.fas.fa-heart:hover {
-
-  -webkit-text-stroke: transparent;
-  background: -webkit-linear-gradient(-120deg, $color-primary, $color-secondary);
-  background-clip: text;
+.heart:hover {
+  color: transparent;
+  background: -webkit-linear-gradient(
+    -120deg,
+    $color-primary,
+    $color-secondary
+  );
+  background-clip: image;
   color: transparent;
 }

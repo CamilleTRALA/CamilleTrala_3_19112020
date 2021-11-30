@@ -4,11 +4,10 @@ header {
   font-family: $font-logo;
   font-size: $brand-size;
   padding-top: 8px;
+
   .arrow {
     font-size: $arrow-size;
     position: absolute;
     left: ($header-height/2) - ($arrow-size/2);
-    .fas.fa-arrow-left {
-    }
   }
 }

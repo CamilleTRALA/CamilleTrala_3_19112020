@@ -1,9 +1,4 @@
-.btn-container {
-  @include flex-center;
-}
-
-button {
-  display: block;
+.btn {
   border-style: none;
   color: white;
   height: 50px;
@@ -11,9 +6,17 @@ button {
   border-radius: 25px;
   background: linear-gradient(-20deg, $color-primary, $color-secondary);
   @include shadow;
+  @include flex-center;
+
 }
 
-button:hover {
+.btn:hover {
   filter: brightness(110%);
   @include shadow--darker;
+}
+
+.container{
+  >.btn{
+    @include flex-center;
+  }
 }

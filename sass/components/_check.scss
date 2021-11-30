@@ -8,8 +8,11 @@
     }
   }
 
-  .check {
+  .check:hover {
+    width: 60px;
+  }
 
+  .check {
     width: 0;
 
     background-color: $color-tertiary;

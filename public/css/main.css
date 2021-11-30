@@ -12,6 +12,7 @@
 html {
   font-family: Roboto;
   font-weight: normal;
+  background-color: white;
 }
 
 a,
@@ -188,7 +189,15 @@ img {
   }
 }
 
-.btn-container {
+.btn {
+  border-style: none;
+  color: white;
+  height: 50px;
+  width: 200px;
+  border-radius: 25px;
+  background: linear-gradient(-20deg, #9356dc, #ff79da);
+  -webkit-box-shadow: 0 0 5px 0 darkgray;
+          box-shadow: 0 0 5px 0 darkgray;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -200,23 +209,23 @@ img {
           align-items: center;
 }
 
-button {
-  display: block;
-  border-style: none;
-  color: white;
-  height: 50px;
-  width: 200px;
-  border-radius: 25px;
-  background: linear-gradient(-20deg, #9356dc, #ff79da);
-  -webkit-box-shadow: 0 0 5px 0 darkgray;
-          box-shadow: 0 0 5px 0 darkgray;
-}
-
-button:hover {
+.btn:hover {
   -webkit-filter: brightness(110%);
           filter: brightness(110%);
   -webkit-box-shadow: 0 0 5px 0 gray;
           box-shadow: 0 0 5px 0 gray;
+}
+
+.container > .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .card {
@@ -229,17 +238,16 @@ button:hover {
   margin: 10px;
 }
 
-i.fas.fa-heart {
-  color: white;
-  -webkit-text-stroke: 1px black;
+.heart {
+  width: 1.5rem;
   -webkit-transition: 400ms;
   transition: 400ms;
 }
 
-i.fas.fa-heart:hover {
-  -webkit-text-stroke: transparent;
+.heart:hover {
+  color: transparent;
   background: -webkit-linear-gradient(-120deg, #9356dc, #ff79da);
-  background-clip: text;
+  background-clip: image;
   color: transparent;
 }
 
@@ -253,6 +261,10 @@ i.fas.fa-heart:hover {
 }
 
 .card.card-dish > .container:hover + .check {
+  width: 60px;
+}
+
+.card.card-dish .check:hover {
   width: 60px;
 }
 
@@ -313,22 +325,20 @@ header .arrow {
   left: 21.5px;
 }
 
-main {
-  background-color: #f6f6f6;
-}
-
 .background-image {
   width: 100%;
 }
 
-.rounded-top {
+.heading {
   position: relative;
-  height: 0;
-  top: -10.5vw;
+  padding: 0 5.3vw 0 5.3vw;
 }
 
-.rounded-top::after {
+.heading::before {
   content: "";
+  position: absolute;
+  top: -11vw;
+  left: 0;
   display: block;
   height: 11vw;
   width: 100vw;
@@ -338,9 +348,18 @@ main {
   z-index: 100;
 }
 
-.heading,
 section {
   margin: 0 5.3vw 0 5.3vw;
+  display: relative;
+}
+
+section > h2::after {
+  content: "";
+  display: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #99e2d0;
 }
 
 .heading {
@@ -382,10 +401,8 @@ section h2 {
   text-transform: uppercase;
 }
 
-section .underline {
-  width: 40px;
-  height: 3px;
-  background-color: #99e2d0;
+section #restaurants {
+  background-color: #f6f6f6;
 }
 
 section > .container {
@@ -448,9 +465,55 @@ footer i {
   font-size: 10px;
 }
 
-header {
-  -webkit-box-shadow: 0 0 5px 0 darkgray;
-          box-shadow: 0 0 5px 0 darkgray;
+.localization {
+  position: relative;
+  height: 5ch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eaeaea;
+  -webkit-box-shadow: 0 5px 5px lightgray inset;
+          box-shadow: 0 5px 5px lightgray inset;
+}
+
+.localization > i {
+  position: absolute;
+  translate: -10ch;
+}
+
+.introduction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  background-color: #f6f6f6;
+  padding: 40px 0 60px 0;
+}
+
+.introduction h2 {
+  width: 20ch;
+  max-width: 80%;
+}
+
+.introduction p {
+  width: 40ch;
+  margin: 15px 0 30px 0;
 }
 
 section h2 {
@@ -490,11 +553,13 @@ section h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 0.2rem;
 }
 
 .card-fonc .container i {
   color: grey;
   padding-right: 20px;
+  translate: 0 0.1rem;
 }
 
 .card-resto {
@@ -505,7 +570,7 @@ section h2 {
           flex-direction: column;
 }
 
-.card-resto img {
+.card-resto > img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 50vw;
@@ -533,12 +598,12 @@ section h2 {
       align-self: center;
 }
 
-.card-resto .new {
-  height: 0;
-  width: 100%;
+.card-resto {
+  position: relative;
 }
 
-.card-resto .new::after {
+.card-resto::after {
+  position: absolute;
   display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -552,7 +617,6 @@ section h2 {
       -ms-flex-pack: end;
           justify-content: end;
   content: "Nouveau";
-  position: relative;
   background-color: #99e2d0;
   color: #008766;
   border-radius: 3px;
