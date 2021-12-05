@@ -1,19 +1,19 @@
-@mixin center{
-    position: relative;
-    left: 50%;
-    translate: -50%;
+@mixin center {
+  position: relative;
+  left: 50%;
+  translate: -50%;
 }
 
 @mixin flex-center {
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@mixin shadow{
-    box-shadow: 0 0 5px 0 darkgray;
+@mixin shadow {
+  box-shadow: 0 0 5px 0 darkgray;
 }
 
-@mixin shadow--darker{
-    box-shadow: 0 0 5px 0 gray;
+@mixin shadow--darker {
+  box-shadow: 0 0 5px 0 gray;
 }

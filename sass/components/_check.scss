@@ -1,40 +1,62 @@
 .card.card-dish {
-  display: flex;
-  overflow: hidden;
-  align-content: stretch;
+
+
   > .container {
-    &:hover + .check {
-      width: 60px;
+    transition: transform 1400ms ease-in-out;
+    transition: padding 400ms ease-in-out;
+  }
+
+  > .container:hover {
+    padding-right: 70px;
+  }
+
+  > .container::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    translate: 0 -50%;
+    background-color: white;
+    padding: 3px;
+    border-radius: 50%;
+    transition: all 400ms ease-in-out;
+    z-index: 10;
+    color: $color-tertiary;
+    transition: right 400ms ease-in-out;
+  }
+
+  > .container:hover::before {
+    animation: check-rotate 400ms linear backwards;
+    right: 20px;
+  }
+
+  @keyframes check-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(300deg);
+    }
+    100% {
+      transform: rotate(720deg);
     }
   }
 
-  .check:hover {
+  > .container::after {
+    display: block;
+    content: "";
+    height: 100%;
     width: 60px;
+    position: absolute;
+    right: -60px;
+    top: 0;
+    background-color: $color-tertiary;
+    transition: transform 400ms ease-in-out;
   }
 
-  .check {
-    width: 0;
-
-    background-color: $color-tertiary;
-    transition: 400ms;
-
-    > .container {
-      display: flex;
-      @include flex-center;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: white;
-      display: flex;
-      top: 50%;
-      transform: translateY(-50%);
-      position: relative;
-      left: 15px;
-
-      i {
-        color: $color-tertiary;
-        font-size: 0.9rem;
-      }
-    }
+  > .container:hover::after {
+    transform: translate(-60px, 0);
   }
 }

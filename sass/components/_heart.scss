@@ -1,16 +1,43 @@
 .heart {
-  width: 1.5rem;
+  font-size: 1.6rem;
 
-  transition: 400ms;
-}
+  .fas.fa-heart {
+    display: block;
 
-.heart:hover {
-  color: transparent;
-  background: -webkit-linear-gradient(
-    -120deg,
-    $color-primary,
-    $color-secondary
-  );
-  background-clip: image;
-  color: transparent;
+    transition: opacity 400ms ease-in-out;
+
+    color: transparent;
+    background: -webkit-linear-gradient(
+      -120deg,
+      $color-primary,
+      $color-secondary
+    );
+    background-clip: text;
+    opacity: 0;
+  }
+
+  .far.fa-heart {
+    display: block;
+    transition: opacity 400ms ease-in-out;
+    position: relative;
+    color: black;
+    width: 0px;
+    height: 0px;
+    z-index: 99;
+
+    &:hover {
+      opacity: 0;
+    }
+
+    &:hover + .fas.fa-heart {
+      color: transparent;
+      background: -webkit-linear-gradient(
+        -120deg,
+        $color-primary,
+        $color-secondary
+      );
+      background-clip: text;
+      opacity: 1;
+    }
+  }
 }

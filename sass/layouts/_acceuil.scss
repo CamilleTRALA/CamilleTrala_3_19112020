@@ -27,10 +27,17 @@
   }
 }
 
-section {
-  h2 {
-    font-weight: 700;
+main.home {
+  section {
+    padding: 0 5.3vw;
+
+    h2 {
+      font-weight: 700;
+    }
   }
+}
+
+section {
 }
 
 .card-fonc {
@@ -48,7 +55,7 @@ section {
     color: white;
     font-size: 1rem;
     position: relative;
-    left: -($card-padding + 0.3);
+    left: -0.7rem;
   }
 
   .container {
@@ -62,10 +69,14 @@ section {
   }
 }
 
+#restaurants {
+  background-color: $color-bg;
+}
+
 .card-resto {
   padding: 0;
   flex-direction: column;
-  >img {
+  > img {
     object-fit: cover;
     height: 50vw;
     border-top-left-radius: $border-radius;
@@ -91,6 +102,7 @@ section {
   position: relative;
 
   &::after {
+    content: "Nouveau";
     position: absolute;
     display: block;
     width: fit-content;
@@ -100,7 +112,6 @@ section {
     margin-left: auto;
     text-align: end;
     justify-content: end;
-    content: "Nouveau";
     background-color: $color-tertiary;
     color: #008766;
     border-radius: 3px;
