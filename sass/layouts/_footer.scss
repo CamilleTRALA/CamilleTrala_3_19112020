@@ -1,12 +1,32 @@
 footer {
   background-color: $footer-bg-color;
   color: white;
-  padding: 7vw;
+
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+  padding-left: 8vw;
 
   .brand {
     font-family: $font-logo;
+    margin-bottom: 13px;
   }
+
+  ul li{
+padding-bottom: 8px;
+  }
+
   i {
-      font-size: 10px;
+    height: 0rem;
+    width: 1rem;
+    margin-right: 10px;
+  }
+
+  li:nth-of-type(1) i {
+    font-size: 0.8rem;
+  }
+  li:nth-of-type(2) i {
+    font-size: 0.65rem;
   }
 }

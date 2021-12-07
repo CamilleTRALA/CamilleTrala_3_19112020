@@ -17,3 +17,13 @@
 @mixin shadow--darker {
   box-shadow: 0 0 5px 0 gray;
 }
+
+@mixin image-center {
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto auto;
+}
