@@ -11,6 +11,7 @@
 
 html {
   font-family: Roboto;
+  font-size: 16px;
   font-weight: normal;
   background-color: white;
 }
@@ -235,6 +236,7 @@ img {
   color: transparent;
   background: -webkit-linear-gradient(-120deg, #9356dc, #ff79da);
   background-clip: text;
+  -webkit-background-clip: text;
   opacity: 0;
 }
 
@@ -257,6 +259,7 @@ img {
   color: transparent;
   background: -webkit-linear-gradient(-120deg, #9356dc, #ff79da);
   background-clip: text;
+  -webkit-background-clip: text;
   opacity: 1;
 }
 
@@ -371,9 +374,25 @@ header .arrow {
 }
 
 .restaurant {
-  background-image: url("./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
   background-position: top;
   background-size: 100%;
+}
+
+.restaurant.delice-des-sens {
+  background-image: url("../../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
+
+.restaurant.palette-du-gout {
+  background-image: url("../../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+}
+
+.restaurant.la-note-enchantee {
+  background-image: url("../../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+  background-position: top -90px left 0;
+}
+
+.restaurant.la-francaise {
+  background-image: url("../../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
 }
 
 .restaurant > .container {
@@ -445,7 +464,8 @@ header .arrow {
 .restaurant .btn-container .btn {
   position: relative;
   left: 50%;
-  translate: -50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
 }
 
 .restaurant section {
@@ -601,7 +621,13 @@ header .arrow {
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 768px) {
+  .restaurant {
+    background-size: cover;
+  }
+  .restaurant .aze {
+    background-position: top 0 left 0;
+  }
   .restaurant .heading::before {
     border-top-left-radius: 80px;
     border-top-right-radius: 80px;
@@ -623,7 +649,7 @@ header .arrow {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
   .restaurant > .container {
     width: 85%;
   }
@@ -636,6 +662,10 @@ header .arrow {
   }
   .restaurant > .container section > .container a {
     width: 100%;
+  }
+  .restaurant > .container .btn-container {
+    margin-top: 70px;
+    padding-bottom: 90px;
   }
 }
 
@@ -697,8 +727,10 @@ footer li:nth-of-type(2) i {
 }
 
 .localization > i {
-  position: absolute;
-  translate: -10ch;
+  position: relative;
+  width: 0;
+  -webkit-transform: translate(-2rem);
+          transform: translate(-2rem);
 }
 
 .introduction {
@@ -769,7 +801,7 @@ footer li:nth-of-type(2) i {
   gap: 25px;
 }
 
-#fonctionnement > .container article {
+#fonctionnement > .container .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -781,7 +813,7 @@ footer li:nth-of-type(2) i {
   border-radius: 20px;
 }
 
-#fonctionnement > .container article::before {
+#fonctionnement > .container .card::before {
   content: "";
   width: 0;
   display: -webkit-box;
@@ -803,7 +835,7 @@ footer li:nth-of-type(2) i {
   left: -0.8rem;
 }
 
-#fonctionnement > .container article .container {
+#fonctionnement > .container .card .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -811,34 +843,35 @@ footer li:nth-of-type(2) i {
   width: calc(25ch + 25px);
 }
 
-#fonctionnement > .container article .container i {
+#fonctionnement > .container .card .container i {
   width: 3rem;
   color: grey;
   padding: 0 20px 0 8px;
-  translate: 0 0.1rem;
+  -webkit-transform: translate 0 0.1rem;
+          transform: translate 0 0.1rem;
 }
 
-#fonctionnement > .container a:nth-of-type(1) article::before {
+#fonctionnement > .container > .container a:nth-of-type(1) .card::before {
   content: "1";
 }
 
-#fonctionnement > .container a:nth-of-type(1) i {
+#fonctionnement > .container > .container a:nth-of-type(1) i {
   font-size: 1.3rem;
 }
 
-#fonctionnement > .container a:nth-of-type(2) article::before {
+#fonctionnement > .container > .container a:nth-of-type(2) .card::before {
   content: "2";
 }
 
-#fonctionnement > .container a:nth-of-type(2) i {
+#fonctionnement > .container > .container a:nth-of-type(2) i {
   font-size: 1.1rem;
 }
 
-#fonctionnement > .container a:nth-of-type(3) article::before {
+#fonctionnement > .container > .container a:nth-of-type(3) .card::before {
   content: "3";
 }
 
-#fonctionnement > .container a:nth-of-type(3) i {
+#fonctionnement > .container > .container a:nth-of-type(3) i {
   font-size: 1rem;
 }
 
@@ -846,7 +879,23 @@ footer li:nth-of-type(2) i {
   background-color: #f6f6f6;
 }
 
-#restaurants > .container article {
+#restaurants > .container:nth-of-type(1) a:nth-of-type(1) .container img {
+  top: -25%;
+}
+
+#restaurants > .container:nth-of-type(1) a:nth-of-type(2) .container img {
+  top: -30%;
+}
+
+#restaurants > .container:nth-of-type(1) a:nth-of-type(3) .container img {
+  top: -35%;
+}
+
+#restaurants > .container:nth-of-type(1) a:nth-of-type(4) .container img {
+  top: -30%;
+}
+
+#restaurants article {
   padding: 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -856,7 +905,7 @@ footer li:nth-of-type(2) i {
   overflow: hidden;
 }
 
-#restaurants > .container article.nouveau::after {
+#restaurants article.nouveau::after {
   content: "Nouveau";
   position: absolute;
   display: block;
@@ -877,14 +926,14 @@ footer li:nth-of-type(2) i {
   border-radius: 3px;
 }
 
-#restaurants > .container article a:nth-of-type(1) .container {
+#restaurants article > .container:nth-of-type(1) {
   position: relative;
   overflow: hidden;
   height: 46vw;
   width: 100%;
 }
 
-#restaurants > .container article a:nth-of-type(1) .container img {
+#restaurants article > .container:nth-of-type(1) img {
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
@@ -896,39 +945,20 @@ footer li:nth-of-type(2) i {
   min-height: 100%;
 }
 
-#restaurants > .container article:nth-of-type(1) a .container img {
-  top: -25%;
-}
-
-#restaurants > .container article:nth-of-type(2) a .container img {
-  top: -30%;
-}
-
-#restaurants > .container article:nth-of-type(3) a .container img {
-  top: -35%;
-}
-
-#restaurants > .container article:nth-of-type(4) a .container img {
-  top: -30%;
-}
-
-#restaurants > .container article > .container {
+#restaurants article > .container:nth-of-type(2) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 12px;
 }
 
-#restaurants > .container article > .container .heart {
+#restaurants article > .container:nth-of-type(2) .heart {
   font-size: 1.6rem;
   padding: 4px 10px 0 0;
 }
 
-#restaurants > .container article > .container > .container {
+#restaurants article > .container:nth-of-type(2) > .container {
   margin-right: auto;
-}
-
-#restaurants > .container article > .container > .container a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -939,22 +969,36 @@ footer li:nth-of-type(2) i {
   gap: 3px;
 }
 
-#restaurants > .container article > .container > .container a .resto {
+#restaurants article > .container:nth-of-type(2) > .container .resto {
   font-size: 1.13rem;
 }
 
-#restaurants > .container article > .container > .container a .resto-sub {
+#restaurants article > .container:nth-of-type(2) > .container .resto-sub {
   font-size: 1.07rem;
   font-weight: 300;
 }
 
-#restaurants > .container article > .container i {
+#restaurants article > .container:nth-of-type(2) i {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 768px) {
+  .home section#restaurants > .container > .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(0, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+  }
+  .home section#restaurants > .container > .container .card > .container:nth-of-type(1) {
+    height: 20vw;
+    max-height: 280px;
+  }
+}
+
+@media (min-width: 1024px) {
   .home section#fonctionnement > .container > .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -969,20 +1013,6 @@ footer li:nth-of-type(2) i {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-  }
-  .home section#fonctionnement > .container > .container a {
-    width: 100%;
-  }
-  .home section#restaurants > .container > .container {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (minmax(0, 1fr))[2];
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 40px;
-  }
-  .home section#restaurants > .container > .container .card a > .container {
-    height: 20vw;
-    max-height: 280px;
   }
 }
 /*# sourceMappingURL=main.css.map */

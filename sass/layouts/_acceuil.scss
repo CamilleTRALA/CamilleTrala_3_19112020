@@ -6,8 +6,9 @@
   box-shadow: 0 5px 5px lightgray inset;
 
   & > i {
-    position: absolute;
-    translate: -10ch;
+    position: relative;
+    width: 0;
+    transform: translate(-2rem);
   }
 }
 
@@ -47,6 +48,7 @@
     > .container {
       width: 100%;
       max-width: 1200px;
+
       > .container {
         display: flex;
         flex-direction: column;
@@ -58,7 +60,7 @@
 
 #fonctionnement {
   > .container {
-    article {
+    .card {
       display: flex;
       align-items: center;
       height: 72px;
@@ -88,34 +90,35 @@
           width: 3rem;
           color: grey;
           padding: 0 20px 0 8px;
-          translate: (0 0.1rem);
+          transform: translate (0 0.1rem);
         }
       }
     }
+    > .container {
+      a:nth-of-type(1) {
+        .card::before {
+          content: "1";
+        }
 
-    a:nth-of-type(1) {
-      article::before {
-        content: "1";
+        i {
+          font-size: 1.3rem;
+        }
       }
-
-      i {
-        font-size: 1.3rem;
+      a:nth-of-type(2) {
+        .card::before {
+          content: "2";
+        }
+        i {
+          font-size: 1.1rem;
+        }
       }
-    }
-    a:nth-of-type(2) {
-      article::before {
-        content: "2";
-      }
-      i {
-        font-size: 1.1rem;
-      }
-    }
-    a:nth-of-type(3) {
-      article::before {
-        content: "3";
-      }
-      i {
-        font-size: 1rem;
+      a:nth-of-type(3) {
+        .card::before {
+          content: "3";
+        }
+        i {
+          font-size: 1rem;
+        }
       }
     }
   }
@@ -124,108 +127,104 @@
 #restaurants {
   background-color: $color-bg;
 
-  > .container {
-    article {
-      padding: 0;
-      flex-direction: column;
+  > .container:nth-of-type(1) a {
+    &:nth-of-type(1) .container img {
+      top: -25%;
+    }
+    &:nth-of-type(2) .container img {
+      top: -30%;
+    }
+    &:nth-of-type(3) .container img {
+      top: -35%;
+    }
+    &:nth-of-type(4) .container img {
+      top: -30%;
+    }
+  }
+
+  article {
+    padding: 0;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+
+    &.nouveau::after {
+      content: "Nouveau";
+      position: absolute;
+      display: block;
+      width: fit-content;
+      font-size: 0.9rem;
+      padding: 5px 11.5px 5px 11.5px;
+      top: 12px;
+      right: 12px;
+      margin-left: auto;
+      text-align: end;
+      justify-content: end;
+      background-color: $color-tertiary;
+      color: #008766;
+      border-radius: 3px;
+    }
+
+    > .container:nth-of-type(1) {
       position: relative;
       overflow: hidden;
+      height: 46vw;
+      width: 100%;
 
-      &.nouveau::after {
-        content: "Nouveau";
-        position: absolute;
-        display: block;
-        width: fit-content;
-        font-size: 0.9rem;
-        padding: 5px 11.5px 5px 11.5px;
-        top: 12px;
-        right: 12px;
-        margin-left: auto;
-        text-align: end;
-        justify-content: end;
-        background-color: $color-tertiary;
-        color: #008766;
-        border-radius: 3px;
+      img {
+        @include image-center;
+        min-height: 100%;
       }
+    }
 
-      a:nth-of-type(1) .container {
-        position: relative;
-        overflow: hidden;
-        height: 46vw;
-        width: 100%;
+    > .container:nth-of-type(2) {
+      display: flex;
+      padding: 12px;
 
-        img {
-          @include image-center;
-          min-height: 100%;
-        }
-      }
-
-      &:nth-of-type(1) a .container img {
-        top: -25%;
-      }
-      &:nth-of-type(2) a .container img {
-        top: -30%;
-      }
-      &:nth-of-type(3) a .container img {
-        top: -35%;
-      }
-      &:nth-of-type(4) a .container img {
-        top: -30%;
+      .heart {
+        font-size: 1.6rem;
+        padding: 4px 10px 0 0;
       }
 
       > .container {
+        margin-right: auto;
         display: flex;
-        padding: 12px;
+        flex-direction: column;
+        gap: 3px;
 
-        .heart {
-          font-size: 1.6rem;
-          padding: 4px 10px 0 0;
+        .resto {
+          font-size: 1.13rem;
         }
 
-        > .container {
-          margin-right: auto;
-
-          a {
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-            .resto {
-              font-size: 1.13rem;
-            }
-
-            .resto-sub {
-              font-size: 1.07rem;
-              font-weight: 300;
-            }
-          }
+        .resto-sub {
+          font-size: 1.07rem;
+          font-weight: 300;
         }
+      }
 
-        i {
-          align-self: center;
-        }
+      i {
+        align-self: center;
       }
     }
   }
 }
 
-@media (min-width: 1000px) {
-  .home section#fonctionnement > .container > .container {
-    @include flex-center;
-    flex-direction: row;
-
-    a {
-      width: 100%;
-    }
-  }
-
+@media (min-width: 768px) {
   .home section#restaurants > .container > .container {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 40px;
 
-    .card a > .container {
+    .card > .container:nth-of-type(1) {
       height: 20vw;
       max-height: 280px;
     }
+  }
+}
+
+@media (min-width: 1024px) {
+  .home section#fonctionnement > .container > .container {
+    @include flex-center;
+    flex-direction: row;
   }
 }
